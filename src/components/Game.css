@@ -1,4 +1,7 @@
 .game {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    background: #61dafb;
+    padding: 50px;
 }
