@@ -6,5 +6,16 @@
   
 .status {
     margin: 20px 0;
+    font-weight: bold;
     text-transform: capitalize;
+}
+
+.reset-button {
+    color: white;
+    background: green;
+    width: -webkit-fill-available;
+    margin-top: 20px;
+    border: 2px solid green;
+    border-radius: 5px;
+    padding: 8px;
 }

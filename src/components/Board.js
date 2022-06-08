@@ -36,9 +36,17 @@ class Board extends React.Component {
         );
     }
 
+    resetData(square) {
+        const squaresdata = square.fill(null);
+        this.setState({
+            squares: squaresdata,
+        });
+    }
+
     render() {
         // Calculate the winner.
-        const winner = this.calculateWinner(this.state.squares);
+        const squares = this.state.squares;
+        const winner = this.calculateWinner(squares);
         let status;
         if (winner) {
             status = 'Winner: ' + winner;
@@ -47,24 +55,25 @@ class Board extends React.Component {
         }
     
         return (
-          <div>
-            <div className="status">{status}</div>
-            <div className="board-row">
-              {this.renderSquare(0)}
-              {this.renderSquare(1)}
-              {this.renderSquare(2)}
+            <div>
+                <div className="status">{status}</div>
+                    <div className="board-row">
+                        {this.renderSquare(0)}
+                        {this.renderSquare(1)}
+                        {this.renderSquare(2)}
+                    </div>
+                    <div className="board-row">
+                        {this.renderSquare(3)}
+                        {this.renderSquare(4)}
+                        {this.renderSquare(5)}
+                    </div>
+                    <div className="board-row">
+                        {this.renderSquare(6)}
+                        {this.renderSquare(7)}
+                        {this.renderSquare(8)}
+                </div>
+                <button className='reset-button' onClick={()=> this.resetData(squares)} >Reset Game</button>
             </div>
-            <div className="board-row">
-              {this.renderSquare(3)}
-              {this.renderSquare(4)}
-              {this.renderSquare(5)}
-            </div>
-            <div className="board-row">
-              {this.renderSquare(6)}
-              {this.renderSquare(7)}
-              {this.renderSquare(8)}
-            </div>
-          </div>
         );
     }
 
